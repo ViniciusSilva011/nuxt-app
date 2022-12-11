@@ -112,6 +112,11 @@ export default {
           title: 'Users',
           to: '/users'
         },
+        {
+          icon: 'mdi-post',
+          title: 'Posts',
+          to: '/posts'
+        },
       ],
       miniVariant: false,
       right: true,
