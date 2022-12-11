@@ -8,7 +8,7 @@
         <ul>
 
           <li v-for="post in posts" :key="post.id">
-            {{post.title}}
+            {{post.title}} 
           </li>
         </ul>
 
@@ -27,15 +27,18 @@ export default {
       ]
     }
   },
-  // async asyncData({$axios}) {
-  
-  //   const {data: posts} = await $axios.get('https://jsonplaceholder.typicode.com/todos')
-  //   console.log('data: ', posts[0], new Date().toLocaleString())
-  //   return {posts}
-  //   // return {
-  //   //   posts
-  //   // }
-  // }
+  async asyncData({$axios}) {
+    let {data: posts} = await $axios.get('https://jsonplaceholder.typicode.com/todos')
+    console.log('data: ', posts[0], new Date().toLocaleString())
+    posts = posts.map(e => {
+      e.title += ' '+ new Date().toLocaleString();
+      return e;
+    })
+    return {posts}
+    // return {
+    //   posts
+    // }
+  }
 }
 // import axios from 'axios'
 // export default {
