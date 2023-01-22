@@ -1,5 +1,5 @@
-# nuxt-app
-
+# This nuxt-app has the main goal to test and improve my knowledge in nuxt
+ 
 ## Build Setup
 
 ```bash
